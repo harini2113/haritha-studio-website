@@ -1,0 +1,11 @@
+{
+  "name": "HARITHA STUDIO",
+  "short_name": "Haritha Studio",
+  "description": "Creative digital designs and boutique poster services.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F0E7",
+  "theme_color": "#F5F0E7",
+  "icons": [{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

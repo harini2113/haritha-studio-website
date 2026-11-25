@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F5F0E7" />
+  <meta name="description" content="HARITHA STUDIO — Creative websites, poster designs and boutique digital services." />
+  <title>HARITHA STUDIO | Creative Digital Agency</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#F5F0E7; --card:#FAF7F2; --line:#DFD5C5; --accent:#9C784C; --dark:#7D5E38; --text:#2C241B; --muted:#6B5E4F; --shadow:0 12px 30px rgba(44,36,27,.08); }
+    * { box-sizing:border-box; margin:0; padding:0; scroll-behavior:smooth; }
+    body { font-family:'Plus Jakarta Sans',sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+    h1,h2,h3,h4,.logo { font-family:'Cormorant Garamond',serif; }
+    a { color:inherit; text-decoration:none; }
+    header { position:sticky; top:0; z-index:50; background:rgba(245,240,231,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+    .nav { max-width:1180px; margin:auto; min-height:72px; padding:.8rem 1.25rem; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-size:1.45rem; font-weight:700; letter-spacing:.5px; }
+    nav { display:flex; align-items:center; gap:1.2rem; }
+    nav a { color:var(--muted); font-size:.88rem; font-weight:600; }
+    nav a:hover { color:var(--accent); }
+    .menu { display:none; border:1px solid var(--line); background:var(--card); border-radius:8px; padding:.45rem .7rem; }
+    section { max-width:1180px; margin:auto; padding:4.5rem 1.25rem; }
+    .hero { min-height:580px; display:flex; align-items:center; justify-content:center; text-align:center; background:radial-gradient(circle at top,#EDE5D8 0%,transparent 68%); }
+    .hero-inner { max-width:760px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:2.5px; font-size:.76rem; font-weight:700; }
+    .hero h1 { font-size:clamp(3rem,8vw,5.5rem); line-height:.98; margin:.7rem 0 1.2rem; }
+    .hero p { max-width:620px; margin:0 auto 1.8rem; color:var(--muted); font-size:1.05rem; }
+    .actions { display:flex; justify-content:center; flex-wrap:wrap; gap:.8rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:999px; padding:.82rem 1.35rem; font-weight:700; font-size:.9rem; cursor:pointer; transition:.25s; }
+    .btn-primary { background:var(--accent); color:#fff; }
+    .btn-primary:hover { background:var(--dark); transform:translateY(-2px); }
+    .btn-outline { border:1.5px solid var(--accent); color:var(--dark); }
+    .btn-outline:hover { background:var(--accent); color:#fff; }
+    .heading { max-width:670px; margin:0 auto 2.5rem; text-align:center; }
+    .heading h2 { font-size:clamp(2.1rem,5vw,3.2rem); margin:.25rem 0 .6rem; }
+    .heading p { color:var(--muted); }
+    .about { display:grid; grid-template-columns:.7fr 1.3fr; gap:2rem; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:2.2rem; box-shadow:var(--shadow); }
+    .about-mark { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:220px; border:1px dashed var(--accent); border-radius:14px; background:#ede5d8; text-align:center; }
+    .about-mark strong { font-family:'Cormorant Garamond',serif; font-size:4.2rem; line-height:1; }
+    .about-mark span { color:var(--muted); }
+    .about-copy h2 { font-size:2.3rem; margin-bottom:.3rem; }
+    .role { color:var(--accent); font-weight:700; margin-bottom:.8rem; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.6rem; transition:.25s; }
+    .card:hover { transform:translateY(-5px); box-shadow:var(--shadow); border-color:var(--accent); }
+    .num { color:var(--accent); font-size:.75rem; font-weight:800; }
+    .card h3 { font-size:1.55rem; margin:.35rem 0 .5rem; }
+    .card p { color:var(--muted); font-size:.9rem; }
+    .tabs { display:flex; justify-content:center; flex-wrap:wrap; gap:.55rem; margin-bottom:1.8rem; }
+    .tab { border:1px solid var(--line); border-radius:999px; background:var(--card); color:var(--muted); padding:.58rem 1rem; font-weight:700; cursor:pointer; }
+    .tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .models { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .model { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:.25s; }
+    .model:hover { transform:translateY(-5px); box-shadow:var(--shadow); }
+    .preview { height:170px; display:flex; align-items:center; justify-content:center; padding:1.2rem; background:linear-gradient(135deg,#e6dccb,#f5f0e7); }
+    .preview-box { width:82%; min-height:95px; background:rgba(255,255,255,.88); border:1px solid rgba(156,120,76,.28); border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .preview-box strong { font-family:'Cormorant Garamond',serif; font-size:1.15rem; }
+    .preview-box span { color:var(--muted); font-size:.72rem; }
+    .model-body { padding:1.35rem; }
+    .model-tag { color:var(--accent); font-size:.72rem; text-transform:uppercase; letter-spacing:1.2px; font-weight:800; }
+    .model h4 { font-size:1.35rem; margin:.25rem 0 .35rem; }
+    .model p { color:var(--muted); font-size:.86rem; margin-bottom:1rem; min-height:66px; }
+    .packages { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .package { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:2rem 1.5rem; text-align:center; }
+    .package h3 { font-size:1.65rem; }
+    .package p { color:var(--muted); margin:.5rem 0 1.2rem; }
+    .contact { text-align:center; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:3rem 1.25rem; }
+    footer { border-top:1px solid var(--line); text-align:center; padding:1.5rem; color:var(--muted); font-size:.85rem; }
+    @media(max-width:850px) { nav { position:absolute; top:72px; left:0; right:0; display:none; background:var(--bg); border-bottom:1px solid var(--line); padding:1rem 1.25rem; flex-direction:column; align-items:flex-start; } nav.open { display:flex; } .menu { display:block; } .about { grid-template-columns:1fr; } .grid,.models,.packages { grid-template-columns:1fr 1fr; } }
+    @media(max-width:560px) { section { padding:3.5rem 1rem; } .hero { min-height:520px; } .grid,.models,.packages { grid-template-columns:1fr; } .about { padding:1.25rem; } .model p { min-height:auto; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a class="logo" href="#home">HARITHA STUDIO</a><button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button><nav><a href="#about">About</a><a href="#services">Services</a><a href="#models">Models</a><a href="#packages">Packages</a><a href="#contact">Contact</a></nav></div>
+</header>
+<main>
+  <section class="hero" id="home"><div class="hero-inner"><span class="eyebrow">Creative Digital Studio</span><h1>Designs with soul.<br>Details with purpose.</h1><p>Distinctive brand websites, posters, invitations and visual experiences created for modern businesses and memorable moments.</p><div class="actions"><a class="btn btn-primary" href="#models">Explore Designs</a><a class="btn btn-outline" href="#contact">Start a Project</a></div></div></section>
+  <section id="about"><div class="about"><div class="about-mark"><strong>HS</strong><span>Creative Studio</span></div><div class="about-copy"><h2>Haritha Studio</h2><div class="role">Creative Digital Designer</div><p>I create thoughtful digital and boutique designs that feel personal, polished and purposeful. From your first idea to the final visual, every element is shaped around your brand or occasion.</p></div></div></section>
+  <section id="services"><div class="heading"><span class="eyebrow">What I Create</span><h2>Services</h2><p>Complete creative solutions for brands and special occasions.</p></div><div class="grid">
+    <article class="card"><span class="num">01</span><h3>Website Design</h3><p>Responsive business, portfolio and landing-page websites.</p></article>
+    <article class="card"><span class="num">02</span><h3>Poster Design</h3><p>Eye-catching promotional, event and social media posters.</p></article>
+    <article class="card"><span class="num">03</span><h3>Invitation Design</h3><p>Elegant digital invitations for weddings and celebrations.</p></article>
+    <article class="card"><span class="num">04</span><h3>Brand Identity</h3><p>Logos and visual direction for a consistent brand presence.</p></article>
+    <article class="card"><span class="num">05</span><h3>Social Creatives</h3><p>Curated visual sets for Instagram and digital campaigns.</p></article>
+    <article class="card"><span class="num">06</span><h3>Custom Creative</h3><p>Bespoke design solutions created around your specific idea.</p></article>
+  </div></section>
+  <section id="models"><div class="heading"><span class="eyebrow">Browse Models</span><h2>Choose a Design Style</h2><p>Explore the sample models, then send the model name for an exact enquiry.</p></div><div class="tabs"><button class="tab active" data-filter="all">All Models</button><button class="tab" data-filter="website">Websites</button><button class="tab" data-filter="poster">Posters</button><button class="tab" data-filter="invitation">Invitations</button><button class="tab" data-filter="brand">Branding</button><button class="tab" data-filter="social">Social</button><button class="tab" data-filter="custom">Custom</button></div><div class="models">
+    <article class="model" data-category="website"><div class="preview"><div class="preview-box"><strong>W01 · Atelier</strong><span>Elegant business website</span></div></div><div class="model-body"><span class="model-tag">Website Model</span><h4>Atelier</h4><p>A refined, editorial style for boutiques, studios and consultants.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20W01%20Atelier%20website%20model.">Enquire on WhatsApp</a></div></article>
+    <article class="model" data-category="poster"><div class="preview"><div class="preview-box"><strong>P01 · Bold Edition</strong><span>Promotional poster</span></div></div><div class="model-body"><span class="model-tag">Poster Model</span><h4>Bold Edition</h4><p>Strong typography and confident layouts for launches and offers.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20P01%20Bold%20Edition%20poster%20model.">Enquire on WhatsApp</a></div></article>
+    <article class="model" data-category="invitation"><div class="preview"><div class="preview-box"><strong>I01 · Ever After</strong><span>Wedding invitation</span></div></div><div class="model-body"><span class="model-tag">Invitation Model</span><h4>Ever After</h4><p>A graceful invitation concept for weddings and intimate celebrations.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20I01%20Ever%20After%20invitation%20model.">Enquire on WhatsApp</a></div></article>
+    <article class="model" data-category="brand"><div class="preview"><div class="preview-box"><strong>B01 · Signature</strong><span>Brand identity</span></div></div><div class="model-body"><span class="model-tag">Brand Model</span><h4>Signature</h4><p>Timeless visual identity with logo, palette and brand direction.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20B01%20Signature%20brand%20model.">Enquire on WhatsApp</a></div></article>
+    <article class="model" data-category="social"><div class="preview"><div class="preview-box"><strong>S01 · Daily Muse</strong><span>Social creative set</span></div></div><div class="model-body"><span class="model-tag">Social Model</span><h4>Daily Muse</h4><p>A cohesive Instagram feed kit for campaigns and daily content.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20S01%20Daily%20Muse%20social%20model.">Enquire on WhatsApp</a></div></article>
+    <article class="model" data-category="custom"><div class="preview"><div class="preview-box"><strong>C01 · Bespoke</strong><span>Custom concept</span></div></div><div class="model-body"><span class="model-tag">Custom Model</span><h4>Bespoke</h4><p>A fully personalised concept developed around your unique vision.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20enquire%20about%20C01%20Bespoke%20custom%20model.">Enquire on WhatsApp</a></div></article>
+  </div></section>
+  <section id="packages"><div class="heading"><span class="eyebrow">Ways to Work</span><h2>Packages</h2><p>Choose a starting point. Every project is tailored to your needs.</p></div><div class="packages"><article class="package"><h3>Essential</h3><p>Perfect for quick, focused creative needs.</p><a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20know%20about%20the%20Essential%20package.">Enquire</a></article><article class="package"><h3>Signature</h3><p>Ideal for complete, branded creative projects.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20know%20about%20the%20Signature%20package.">Enquire</a></article><article class="package"><h3>Bespoke</h3><p>Designed for unique ideas and custom requirements.</p><a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20would%20like%20to%20discuss%20a%20Bespoke%20project.">Enquire</a></article></div></section>
+  <section id="contact"><div class="contact"><span class="eyebrow">Have a Project?</span><h2>Let’s create something memorable.</h2><p style="color:var(--muted);margin:.5rem 0 1.4rem">Send your idea directly on WhatsApp or follow our latest designs.</p><div class="actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/916369432177?text=Hello%20HARITHA%20STUDIO%2C%20I%20have%20a%20project%20enquiry.">WhatsApp Enquiry</a><a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/harithastudio.___">Instagram</a></div></div></section>
+</main>
+<footer>© <span id="year"></span> HARITHA STUDIO. All rights reserved.</footer>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const tabs=document.querySelectorAll('.tab');
+  const models=document.querySelectorAll('.model');
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');const filter=tab.dataset.filter;models.forEach(model=>{model.style.display=(filter==='all'||model.dataset.category===filter)?'block':'none';});}));
+  if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+</script>
+</body>
+</html>
